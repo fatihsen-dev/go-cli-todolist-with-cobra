@@ -1,11 +1,11 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
-*/
 package main
 
-import "github/fatihsen-dev/go-cli-with-cobra/cmd"
+import (
+	"github.com/fatihsen-dev/go-cli-todolist-with-cobra/cmd"
+	"github.com/fatihsen-dev/go-cli-todolist-with-cobra/stores"
+)
 
 func main() {
+	stores.FetchTodos()
 	cmd.Execute()
 }

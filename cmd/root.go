@@ -6,19 +6,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
+var Root = &cobra.Command{
 	Use:   "[command]",
-	Short: "A CLI calculator",
-	Long:  `A CLI calculator that can add and subtract two numbers.`,
+	Short: "Todo List with go cobra cli fw",
+	Long:  `Github: www.github.com/fatihsen-dev`,
 }
 
 func Execute() {
-	err := rootCmd.Execute()
+	err := Root.Execute()
 	if err != nil {
 		os.Exit(1)
 	}
 }
 
 func init() {
-	rootCmd.AddCommand(subCmd)
+	Root.AddCommand(create)
+	Root.AddCommand(update)
+	Root.AddCommand(delete)
+	Root.AddCommand(lists)
 }
